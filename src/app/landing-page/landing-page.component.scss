@@ -345,7 +345,15 @@
 		.testimony-card-section {
 			display: flex;
 			align-items: center;
-			::ng-deep .slick-list { padding: 10px 0px; }
+			::ng-deep .slick-list { 
+				padding: 10px 0px;
+				.slick-track {
+					.slick-active {
+						display: flex;
+						justify-content: center;
+					}
+				}
+			}
 			.testimony-card {
 				height: 448px;
 				width: 232px !important;
@@ -405,6 +413,7 @@
 					justify-content: space-between;
 					padding: 20px;
 					cursor: pointer;
+					-webkit-tap-highlight-color: transparent;
 					.text-head {
 						font-family: Nunito-Regular;
 						font-size: 18px;

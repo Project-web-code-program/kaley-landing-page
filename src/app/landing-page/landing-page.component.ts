@@ -11,24 +11,81 @@ export class LandingPageComponent implements OnInit {
   isMobile = false;
 
   @HostListener('window:resize', ['$event'])
+  // tslint:disable-next-line:typedef
   onResize(event: any) {
     this.isMobile = (event.target.innerWidth < 768) ? true : false;
     if (this.isMobile) {
       $('.testimony-card-section').not('.slick-initialized').slick();
-    } else { $('.testimony-card-section').not('.slick-initialized').slick('unslick'); }
+    }
   }
 
   constructor() { }
 
   ngOnInit(): void {
     this.isMobile = (window.innerWidth < 768) ? true : false;
-    // $('.faq-accordion-body').text('ADI GANS');
+
     if (this.isMobile) {
       $('.testimony-card-section').not('.slick-initialized').slick({
         prevArrow: '<img src="assets/images/arrow-left-testimony.png">',
         nextArrow: '<img src="assets/images/arrow-right-testimony.png">'
       });
-    } else { $('.testimony-card-section').not('.slick-initialized').slick('unslick'); }
+
+      // handle scroll horizontal move automatically at product card section
+      setInterval(() => {
+        const scrollLeftProductSection = $('.products-card-section').scrollLeft();
+
+        if (scrollLeftProductSection < 750) {
+          $('.products-card-section').animate({
+            scrollLeft: '+=150px'
+          }, 500);
+        }
+        if (scrollLeftProductSection >= 750) {
+          $('.products-card-section').delay(400).animate({
+            scrollLeft: 0
+          }, 500);
+        }
+      }, 3000);
+    }
+
+    // handle navigation to jump section menu
+    $('.nav-item').click((event: any) => {
+      const section = event.target.getAttribute('data-nav-section');
+
+      if ( $('[data-section="' + section + '"]').length ) {
+        $('html, body').animate({
+          scrollTop: $('[data-section="' + section + '"]').offset().top - 55
+        }, 500);
+      }
+    });
+
+    // handle scroll set class active navigation
+    $(window).scroll(() => {
+      const scrollHeight = $(window).scrollTop() + 186;
+      const aboutOffset   = $('.about-section').offset().top;
+      const valuesOffset  = $('.values-section').offset().top;
+      const productOffset = $('.products-section').offset().top;
+      const benefitOffset = $('.benefit-section').offset().top;
+      const faqOffset     = $('.faq-section').offset().top;
+      const footerOffset  = $('.footer-section').offset().top;
+
+      const originalColor = '#333333';
+      const activeColor = '#27AE60';
+
+      $('.nav-list .nav-item').css({color: originalColor});
+      if (scrollHeight >= aboutOffset && scrollHeight < valuesOffset) {
+        $('.nav-item:nth-child(1)').css({color: activeColor});
+      }
+      if (scrollHeight >= valuesOffset && scrollHeight < productOffset) {
+        $('.nav-item:nth-child(2)').css({color: activeColor});
+      }
+      if (scrollHeight >= productOffset && scrollHeight < benefitOffset) {
+        $('.nav-item:nth-child(3)').css({color: activeColor});
+      }
+      if (scrollHeight >= faqOffset && scrollHeight < footerOffset) {
+        $('.nav-item:nth-child(4)').css({color: activeColor});
+      }
+    });
+
   }
 
   onClickFaqHead(numberOfFaq: string): void {

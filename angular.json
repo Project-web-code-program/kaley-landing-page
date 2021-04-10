@@ -58,8 +58,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4mb",
+                  "maximumError": "5mb"
                 }
               ]
             }
@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "kaley-landing-page"
+  "defaultProject": "kaley-landing-page",
+  "cli": {
+    "analytics": "7cf5850a-446b-4dd1-8554-e2d3be9fbe56"
+  }
 }

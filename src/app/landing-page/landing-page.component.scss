@@ -35,7 +35,6 @@
 		.nav-item {
 			font-family: Nunito-SemiBold;
 			font-size: 18px;
-			color: #333333;
 			margin-right: 30px;
 			cursor: pointer;
 			&:last-of-type {
@@ -107,7 +106,6 @@
 				font-family: Nunito-ExtraBold;
 				font-size: 31px;
 				line-height: 48px;
-				color: #333333;
 			}
 			.bpom-section {
 				margin: 20px 0px 50px 0px;
@@ -115,7 +113,6 @@
 				.bpom-text {
 					font-family: Nunito-Regular;
 					font-size: 18px;
-					color: #333333;
 					margin-right: 16px;
 				}
 			}
@@ -181,7 +178,6 @@
 	.text {
 		font-family: Nunito-Regular;
 		font-size: 18px;
-		color: #333333;
 		line-height: 31px;
 	}
 }
@@ -192,6 +188,7 @@
 		img { display: none; }
 		.text {
 			font-size: 14px;
+			line-height: 21px;
 		}
 	}
 }
@@ -261,7 +258,6 @@
 			font-family: Nunito-Bold;
 			line-height: 27px;
 			font-size: 18px;
-			color: #333333;
 			text-align: center;
 			border-radius: 0px 0px 20px 20px;
 		}
@@ -323,7 +319,6 @@
 				font-family: Nunito-Bold;
 				font-size: 20px;
 				line-height: 27px;
-				color: #333333;
 				margin-top: 24px;
 			}
 
@@ -332,7 +327,6 @@
 				font-family: Nunito-Regular;
 				font-size: 16px;
 				line-height: 24px;
-				color: #333333;
 			}
 		}
 	}
@@ -375,7 +369,6 @@
 		font-family: Nunito-ExtraBold;
 		font-size: 36px;
 		line-height: 24px;
-		color: #333333;
 		margin-bottom: 16px;
 	}
 
@@ -383,7 +376,6 @@
 		font-family: Nunito-Regular;
 		font-size: 18px;
 		line-height: 27px;
-		color: #333333;
 		margin-bottom: 60px;
 	}
 
@@ -418,7 +410,6 @@
 						font-family: Nunito-Regular;
 						font-size: 18px;
 						line-height: 27px;
-						color: #333333;
 					}
 					.arrow-section { padding-top: 5px; }
 					.arrow-up { img { transform: rotate(180deg); } }
@@ -430,7 +421,6 @@
 					font-family: Nunito-Regular;
 					font-size: 18px;
 					line-height: 27px;
-					color: #333333;
 					// transition: height 0.5s, opacity 0.2s, padding 0.5s;
 				}
 				.body-notactive {
@@ -487,7 +477,6 @@
 			font-family: Nunito-Bold;
 			font-size: 24px;
 			line-height: 36px;
-			color: #333333;
 			margin-bottom: 32px;
 		}
 		button {

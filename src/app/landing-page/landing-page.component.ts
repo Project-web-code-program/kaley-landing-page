@@ -9,20 +9,25 @@ declare var $: any;
 export class LandingPageComponent implements OnInit {
   faq1 = false; faq2 = false; faq3 = false; faq4 = false; faq5 = false;
   isMobile = false;
+  screenWidth: number;
 
   @HostListener('window:resize', ['$event'])
   // tslint:disable-next-line:typedef
-  onResize(event: any) {
+  onResize(event?: any) {
     this.isMobile = (event.target.innerWidth < 768) ? true : false;
     if (this.isMobile) {
       $('.testimony-card-section').not('.slick-initialized').slick();
+      this.screenWidth = window.innerWidth;
     }
   }
 
-  constructor() { }
+  constructor() {
+    this.screenWidth = 0;
+  }
 
   ngOnInit(): void {
     this.isMobile = (window.innerWidth < 768) ? true : false;
+    this.screenWidth = window.innerWidth;
 
     if (this.isMobile) {
       $('.testimony-card-section').not('.slick-initialized').slick({
@@ -33,13 +38,23 @@ export class LandingPageComponent implements OnInit {
       // handle scroll horizontal move automatically at product card section
       setInterval(() => {
         const scrollLeftProductSection = $('.products-card-section').scrollLeft();
+        let standardPx = 0;
+        let standardScrollLeft = '';
 
-        if (scrollLeftProductSection < 750) {
+        if (this.screenWidth >= 376 && this.screenWidth <= 425) {
+          standardPx = 685; standardScrollLeft = '+=150px';
+        } else if (this.screenWidth >= 321 && this.screenWidth <= 375) {
+          standardPx = 735; standardScrollLeft = '+=150px';
+        } else {
+          standardPx = 700; standardScrollLeft = '+=135px';
+        }
+
+        if (scrollLeftProductSection < standardPx) {
           $('.products-card-section').animate({
-            scrollLeft: '+=150px'
+            scrollLeft: standardScrollLeft
           }, 500);
         }
-        if (scrollLeftProductSection >= 750) {
+        if (scrollLeftProductSection >= standardPx) {
           $('.products-card-section').delay(400).animate({
             scrollLeft: 0
           }, 500);

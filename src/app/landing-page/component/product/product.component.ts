@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-product',
@@ -8,11 +9,28 @@ import { Component, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
 
   openModalDetail = false;
+  isMobile = false;
+  screenWidth: number;
   contentImage = {imgLeft: '', imgRight: ''};
 
-  constructor() { }
+  constructor() {
+    this.screenWidth = 0;
+  }
 
   ngOnInit(): void {
+    this.isMobile = (window.innerWidth < 768) ? true : false;
+    this.screenWidth = window.innerWidth;
+
+    if (this.isMobile) {
+      $('.products-inner-card-section').not('.slick-initialized').slick({
+        centerMode: true,
+        slidesToShow: 1,
+        infinite: false,
+        centerPadding: '80px',
+        autoplay: false,
+        autoplaySpeed: 2000,
+      });
+    }
   }
 
   openDialog(typeProduct: string): void {

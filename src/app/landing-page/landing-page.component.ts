@@ -16,7 +16,11 @@ export class LandingPageComponent implements OnInit {
   onResize(event?: any) {
     this.isMobile = (event.target.innerWidth < 768) ? true : false;
     if (this.isMobile) {
-      $('.testimony-card-section').not('.slick-initialized').slick();
+      $('.testimony-card-section').not('.slick-initialized').slick({
+        centerMode: false,
+        prevArrow: '<img src="assets/images/arrow-left-testimony.png">',
+        nextArrow: '<img src="assets/images/arrow-right-testimony.png">'
+      });
       this.screenWidth = window.innerWidth;
     }
   }
@@ -31,35 +35,36 @@ export class LandingPageComponent implements OnInit {
 
     if (this.isMobile) {
       $('.testimony-card-section').not('.slick-initialized').slick({
+        centerMode: false,
         prevArrow: '<img src="assets/images/arrow-left-testimony.png">',
         nextArrow: '<img src="assets/images/arrow-right-testimony.png">'
       });
 
       // handle scroll horizontal move automatically at product card section
-      setInterval(() => {
-        const scrollLeftProductSection = $('.products-card-section').scrollLeft();
-        let standardPx = 0;
-        let standardScrollLeft = '';
+      // setInterval(() => {
+      //   const scrollLeftProductSection = $('.products-card-section').scrollLeft();
+      //   let standardPx = 0;
+      //   let standardScrollLeft = '';
 
-        if (this.screenWidth >= 376 && this.screenWidth <= 425) {
-          standardPx = 685; standardScrollLeft = '+=150px';
-        } else if (this.screenWidth >= 321 && this.screenWidth <= 375) {
-          standardPx = 735; standardScrollLeft = '+=150px';
-        } else {
-          standardPx = 700; standardScrollLeft = '+=135px';
-        }
+      //   if (this.screenWidth >= 376 && this.screenWidth <= 425) {
+      //     standardPx = 685; standardScrollLeft = '+=150px';
+      //   } else if (this.screenWidth >= 321 && this.screenWidth <= 375) {
+      //     standardPx = 735; standardScrollLeft = '+=150px';
+      //   } else {
+      //     standardPx = 700; standardScrollLeft = '+=135px';
+      //   }
 
-        if (scrollLeftProductSection < standardPx) {
-          $('.products-card-section').animate({
-            scrollLeft: standardScrollLeft
-          }, 500);
-        }
-        if (scrollLeftProductSection >= standardPx) {
-          $('.products-card-section').delay(400).animate({
-            scrollLeft: 0
-          }, 500);
-        }
-      }, 3000);
+      //   if (scrollLeftProductSection < standardPx) {
+      //     $('.products-card-section').animate({
+      //       scrollLeft: standardScrollLeft
+      //     }, 500);
+      //   }
+      //   if (scrollLeftProductSection >= standardPx) {
+      //     $('.products-card-section').delay(400).animate({
+      //       scrollLeft: 0
+      //     }, 500);
+      //   }
+      // }, 3000);
     }
 
     // handle navigation to jump section menu

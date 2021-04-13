@@ -26,9 +26,35 @@ export class ProductComponent implements OnInit {
         centerMode: true,
         slidesToShow: 1,
         infinite: false,
-        centerPadding: '80px',
-        autoplay: false,
-        autoplaySpeed: 2000,
+        autoplay: true,
+        mobileFirst: true,
+        autoplaySpeed: 3000,
+        responsive: [
+          {
+            breakpoint: 424, // 425
+            settings: { centerPadding: '105px' }
+          },
+          {
+            breakpoint: 413, // 414
+            settings: { centerPadding: '100px' }
+          },
+          {
+            breakpoint: 410, // 411
+            settings: { centerPadding: '97px' }
+          },
+          {
+            breakpoint: 374, // 375
+            settings: { centerPadding: '80px' }
+          },
+          {
+            breakpoint: 359, // 360
+            settings: { centerPadding: '73px' }
+          },
+          {
+            breakpoint: 319, // 320
+            settings: { centerPadding: '53px' }
+          }
+        ]
       });
     }
   }

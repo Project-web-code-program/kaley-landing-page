@@ -25,7 +25,7 @@ export class ProductComponent implements OnInit {
       $('.products-inner-card-section').not('.slick-initialized').slick({
         centerMode: true,
         slidesToShow: 1,
-        infinite: false,
+        infinite: true,
         autoplay: true,
         mobileFirst: true,
         autoplaySpeed: 3000,

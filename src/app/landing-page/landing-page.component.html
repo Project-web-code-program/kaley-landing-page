@@ -12,7 +12,7 @@
       </div>
       <button class="btn-global whatsapp-section">
         <img class="whatsapp-icon" src="assets/images/wa-icon.png">
-        <span class="whatsapp-text">Whatsapp</span>
+        <span class="whatsapp-text" (click)="openWhatsapp()">Whatsapp</span>
       </button>
     </div>
   </div>
@@ -33,7 +33,7 @@
         <div class="bpom-text">Disertifikasi BPOM</div>
         <div><img src="assets/images/logo-bpom.png"></div>
       </div>
-      <button class="btn-global btn-buy-product">
+      <button class="btn-global btn-buy-product" (click)="openWhatsapp()">
         <span>BELI PRODUK</span>
       </button>
     </div>
@@ -103,7 +103,8 @@
   <div class="title-testimony">Apa kata mereka tentang produk Kaley?</div>
   <div class="testimony-card-section">
     <div class="testimony-card">
-      <div class="testimony-inner-card">
+      <div class="testimony-inner-card" 
+        (click)="openTestimonyUrl('https://reviews.femaledaily.com/products/treatment/serum-essence-23/kaley/pineapple-c-brightening-serum?cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=1')">
         <img src="assets/images/trusted-stamp.png">
         <div class="testimony-name">Ferafitri1</div>
         <div class="testimony-answare">“Top markotop pokoknya. Aku udah mau habis dua botol pake serum nanas ini. 
@@ -112,7 +113,8 @@
       </div>
     </div>
     <div class="testimony-card">
-      <div class="testimony-inner-card">
+      <div class="testimony-inner-card"
+        (click)="openTestimonyUrl('https://reviews.femaledaily.com/products/mask/wash-off-peel-off/kaley/tofu-pudding-mask?cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=1')">
         <img src="assets/images/trusted-stamp.png">
         <div class="testimony-name">NadaAlech</div>
         <div class="testimony-answare">“So far ini adalah sleeping mask terbaik yang pernah aku coba. Wanginya enakkkkkkk bangetttttt! 
@@ -121,7 +123,8 @@
       </div>
     </div>
     <div class="testimony-card">
-      <div class="testimony-inner-card">
+      <div class="testimony-inner-card"
+        (click)="openTestimonyUrl('https://reviews.femaledaily.com/products/mask/sleeping-mask/kaley/watermelon-jelly-mask?cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=1')">
         <img src="assets/images/trusted-stamp.png">
         <div class="testimony-name">Evyndacari</div>
         <div class="testimony-answare">“Enak banget bener-bener chalming jerawat dan bruntusan. 
@@ -222,7 +225,7 @@
   <ng-container *ngIf="!isMobile">
     <div class="footer-left">
       <div class="footer-left-text">Biar yakin buat cobain Kaley skincare,<br>coba dulu manfaatnya!</div>
-      <button class="btn-global whatsapp-section">
+      <button class="btn-global whatsapp-section" (click)="openWhatsapp()">
         <img class="whatsapp-icon" src="assets/images/wa-icon.png">
         <div class="whatsapp-text">Whatsapp</div>
       </button>

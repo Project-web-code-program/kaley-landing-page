@@ -135,4 +135,12 @@ export class LandingPageComponent implements OnInit {
     }
   }
 
+  openTestimonyUrl(url: string): void {
+    window.open(url, '_blank');
+  }
+
+  openWhatsapp(): void {
+    window.open('https://api.whatsapp.com/send?phone=6285779800933&text=Hai%20Admin%20Kaley', '_blank');
+  }
+
 }

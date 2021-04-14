@@ -23,6 +23,7 @@
 	padding-left: 120px;
 	img {
 		margin: 15px 0;
+    width: 132px; height: 66px;
 	}
 }
 
@@ -51,8 +52,8 @@
     border-radius: 8px;
 		cursor: pointer;
 		.whatsapp-icon {
-			padding-top: 3px;
-			margin-right: 11px;
+			margin-right: 8px;
+      width: 24px; height: 24px;
 		}
 		.whatsapp-text {
 			font-family: Nunito-Bold;
@@ -107,6 +108,7 @@
 				font-size: 31px;
 				line-height: 48px;
 			}
+      
 			.bpom-section {
 				margin: 20px 0px 50px 0px;
 				display: flex;
@@ -115,10 +117,11 @@
 					font-size: 18px;
 					margin-right: 16px;
 				}
+        img { width: 28px; height: 25px; }
 			}
 			.btn-buy-product {
 				background-color: #27AE60;
-				padding: 12px;
+				padding: 12px 16px;
 				font-family: Nunito-Bold;
 				font-size: 18px;
 				color: #ffffff;
@@ -147,10 +150,14 @@
 					width: unset;
 					font-size: 18px;
 					line-height: 27px;
+          @include breakpoint(small-mobile) {
+            font-size: 17px;
+          }
 				}
 				.bpom-section {
 					margin: 5px 0px 30px 0px;
-					justify-content: center; 
+					justify-content: center;
+          img { width: 26px; height: 24px; }
 				}
 				.btn-buy-product { font-size: 16px; }
 			}
@@ -226,6 +233,9 @@
 			.values-desc {
 				font-size: 14px;
 				line-height: 21px;
+        @include breakpoint(small-mobile) {
+          font-size: 12px;
+        }
 			}
 			img {
 				width: 48px; height: 48px;
@@ -481,7 +491,7 @@
 				.faq-accordion {
 					.faq-accordion-head {
 						padding: 12px 20px;
-						.text-head { font-size: 14px; line-height: 21px; padding-right: 55px; }
+						.text-head { font-size: 14px; line-height: 21px; padding-right: unset; }
 						.arrow-section { padding-top: 10px; }
 						img { width: 16.8px; height: 9.6px; }
 					}
@@ -517,8 +527,8 @@
 			border-radius: 8px;
 			cursor: pointer;
 			.whatsapp-icon {
-				padding-top: 3px;
-				margin-right: 11px;
+				margin-right: 8px;
+        width: 24px; height: 24px;
 			}
 			.whatsapp-text {
 				font-family: Nunito-Bold;
@@ -527,6 +537,9 @@
 			}
 		}
 	}
+  .footer-right {
+    img { width: 280px; height: 140px; }
+  }
 }
 
 @include breakpoint(mobile) {

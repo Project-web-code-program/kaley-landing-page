@@ -28,7 +28,10 @@
 				height: 408px;
 				margin: 0px 15px;
 			
-				.product-card-header-wrapper { height: 250px; border-radius: 12px 12px 0px 0px; }
+				.product-card-header-wrapper { 
+          height: 250px; border-radius: 12px 12px 0px 0px; 
+          img { width: 156px; height: 250px; } 
+        }
 				.product-card-header1 { background-color: #ffebaf; }
 				.product-card-header2 { background-color: #f6dcbb; }
 				.product-card-header3 { background-color: #fdd5dd; }
@@ -36,6 +39,7 @@
 				.product-card-header5 { background-color: #c8d9a0; }
 				.product-card-body {
 					padding: 28px 20px;
+          
 					// padding: 20px;
 					// border-radius: 0px 0px 12px 12px;
 					.title-desc-section {

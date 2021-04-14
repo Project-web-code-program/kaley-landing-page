@@ -1,8 +1,6 @@
 <div class="top-header-section">
   <div class="header-section">
-    <div class="logo-section">
-      <img src="assets/images/logo-kaley.png">
-    </div>
+    <div class="logo-section"><img src="assets/images/logo-kaley.png"></div>
     <div class="navigation-section">
       <div class="nav-list">
         <div class="nav-item" data-nav-section="about">About</div>
@@ -24,11 +22,13 @@
     <img class="img-particle-2" src="assets/images/banner-particle-2.png">
 
     <div class="banner-left-content">
-      <div class="ingin-kulit-text">
-        Ingin Kulit Lebih Sehat dan Glowing
-        dengan Bahan Alami, Aman dan Sudah
-        Ber-BPOM? Yuk Scroll Kebawah
-      </div>
+      <ng-container *ngIf="isMobile">
+        <div class="ingin-kulit-text">Ingin Kulit Lebih Sehat<br>dan Glowing dengan Bahan Alami,<br>Aman dan Sudah Ber-BPOM?<br>Yuk Scroll Kebawah</div>
+      </ng-container>
+      <ng-container *ngIf="!isMobile">
+        <div class="ingin-kulit-text">Ingin Kulit Lebih Sehat dan Glowing dengan Bahan Alami, Aman dan Sudah Ber-BPOM? Yuk Scroll Kebawah</div>
+      </ng-container>
+      
       <div class="bpom-section">
         <div class="bpom-text">Disertifikasi BPOM</div>
         <div><img src="assets/images/logo-bpom.png"></div>
@@ -51,22 +51,28 @@
   <div class="values-card">
     <img src="assets/images/like.png">
     <div class="values-title">Praktis</div>
-    <div class="values-desc">Dapatkan beberapa manfaat baik bagi kulitmu dalam satu produk</div>
+    <ng-container *ngIf="isMobile"><div class="values-desc">Dapatkan beberapa<br>manfaat baik bagi<br>kulitmu dalam<br>satu produk</div></ng-container>
+    <ng-container *ngIf="!isMobile"><div class="values-desc">Dapatkan beberapa<br>manfaat baik bagi kulitmu<br>dalam satu produk</div></ng-container>
   </div>
   <div class="values-card">
     <img src="assets/images/shield.png">
     <div class="values-title">Bersertifikasi BPOM</div>
-    <div class="values-desc">Skincare berbahan dasar alami dan aman untuk pemakaian jangka panjang</div>
+    <ng-container *ngIf="isMobile"><div class="values-desc">Skincare berbahan<br>dasar alami dan aman<br>untuk pemakaian<br>jangka panjang</div></ng-container>
+    <ng-container *ngIf="!isMobile"><div class="values-desc">Skincare berbahan dasar alami dan aman untuk pemakaian jangka panjang</div></ng-container>
   </div>
   <div class="values-card">
     <img src="assets/images/women.png">
-    <div class="values-title">Aman Untuk Ibu Hamil</div>
-    <div class="values-desc">Aman untuk ibu hamil dan menyusui yang ingin tampil cantik setiap saat</div>
+    <ng-container *ngIf="isMobile"><div class="values-title">Aman Untuk<br>Ibu Hamil</div></ng-container>
+    <ng-container *ngIf="!isMobile"><div class="values-title">Aman Untuk Ibu Hamil</div></ng-container>
+
+    <ng-container *ngIf="isMobile"><div class="values-desc">Aman untuk ibu hamil<br>dan menyusui yang<br>ingin tampil cantik<br>setiap saat</div></ng-container>
+    <ng-container *ngIf="!isMobile"><div class="values-desc">Aman untuk ibu hamil<br>dan menyusui yang ingin<br>tampil cantik setiap saat</div></ng-container>
   </div>
   <div class="values-card">
     <img src="assets/images/skin.png">
     <div class="values-title">Semua Jenis Kulit</div>
-    <div class="values-desc">Cocok dipakai oleh pria dan wanita dengan semua jenis kulit termasuk kulit sensitif </div>
+    <ng-container *ngIf="isMobile"><div class="values-desc">Cocok dipakai oleh pria<br>dan wanita dengan<br>semua jenis kulit<br>termasuk kulit sensitif</div></ng-container>
+    <ng-container *ngIf="!isMobile"><div class="values-desc">Cocok dipakai oleh pria dan<br>wanita dengan semua jenis<br>kulit termasuk kulit sensitif</div></ng-container>
   </div>
 </div>
 
@@ -138,13 +144,15 @@
 
 <div class="faq-section" data-section="faq">
   <div class="faq-title">FAQ</div>
-  <div class="faq-subtitle">Beberapa pertanyaan yang sering ditanyakan customer</div>
+  <ng-container *ngIf="isMobile"><div class="faq-subtitle">Beberapa pertanyaan yang sering<br>ditanyakan customer</div></ng-container>
+  <ng-container *ngIf="!isMobile"><div class="faq-subtitle">Beberapa pertanyaan yang sering ditanyakan customer</div></ng-container>
   <div class="faq-accordion-section">
 
     <div class="faq-accordion-inner">
       <div class="faq-accordion">
         <div class="faq-accordion-head" (click)="onClickFaqHead('3')">
-          <div class="text-head">Apakah produk Kaley aman untuk kulit sensitif?</div>
+          <ng-container *ngIf="isMobile"><div class="text-head">Apakah produk Kaley aman<br>untuk kulit sensitif?</div></ng-container>
+          <ng-container *ngIf="!isMobile"><div class="text-head">Apakah produk Kaley aman untuk kulit sensitif?</div></ng-container>
           <div class="arrow-section" [ngClass]="{'arrow-bottom': !faq3, 'arrow-up': faq3}"><img src="assets/images/arrow.png"></div>
         </div>
         <div class="faq-accordion-body" [ngClass]="{'body-notactive': !faq3, 'body-active': faq3}">
@@ -155,7 +163,8 @@
 
       <div class="faq-accordion">
         <div class="faq-accordion-head" (click)="onClickFaqHead('4')">
-          <div class="text-head">Bisakah saya memakai produk ini dengan produk lainnya?</div>
+          <ng-container *ngIf="isMobile"><div class="text-head">Bisakah saya memakai produk ini<br>dengan produk lainnya?</div></ng-container>
+          <ng-container *ngIf="!isMobile"><div class="text-head">Bisakah saya memakai produk ini dengan produk lainnya?</div></ng-container>
           <div class="arrow-section" [ngClass]="{'arrow-bottom': !faq4, 'arrow-up': faq4}"><img src="assets/images/arrow.png"></div>
         </div>
         <div class="faq-accordion-body" [ngClass]="{'body-notactive': !faq4, 'body-active': faq4}">
@@ -166,8 +175,8 @@
 
       <div class="faq-accordion">
         <div class="faq-accordion-head" (click)="onClickFaqHead('5')">
-          <div class="text-head">Saya tertarik dengan produk ini namun bingung
-            produk mana yang cocok untuk saya</div>
+          <ng-container *ngIf="isMobile"><div class="text-head">Saya tertarik dengan produk ini<br>namun bingung produk mana<br>yang cocok untuk saya</div></ng-container>
+          <ng-container *ngIf="!isMobile"><div class="text-head">Saya tertarik dengan produk ini namun bingung produk mana yang cocok untuk saya</div></ng-container>
           <div class="arrow-section" [ngClass]="{'arrow-bottom': !faq5, 'arrow-up': faq5}"><img src="assets/images/arrow.png"></div>
         </div>
         <div class="faq-accordion-body" [ngClass]="{'body-notactive': !faq5, 'body-active': faq5}">
@@ -182,7 +191,8 @@
 
       <div class="faq-accordion">
         <div class="faq-accordion-head" (click)="onClickFaqHead('1')">
-          <div class="text-head">Dari manakah pengiriman produk ini? Jasa kirim apa saja yang bisa saya gunakan?</div>
+          <ng-container *ngIf="isMobile"><div class="text-head">Dari manakah pengiriman produk ini?<br>Jasa kirim apa saja yang bisa<br>saya gunakan?</div></ng-container>
+          <ng-container *ngIf="!isMobile"><div class="text-head">Dari manakah pengiriman produk ini? Jasa kirim apa saja yang bisa saya gunakan?</div></ng-container>
           <div class="arrow-section" [ngClass]="{'arrow-bottom': !faq1, 'arrow-up': faq1}"><img src="assets/images/arrow.png"></div>
         </div>
         <div class="faq-accordion-body" [ngClass]="{'body-notactive': !faq1, 'body-active': faq1}">
@@ -193,7 +203,8 @@
 
       <div class="faq-accordion">
         <div class="faq-accordion-head" (click)="onClickFaqHead('2')">
-          <div class="text-head">Mulai usia berapa kita bisa memakai produk ini?</div>
+          <ng-container *ngIf="isMobile"><div class="text-head">Mulai usia berapa kita bisa<br>memakai produk ini?</div></ng-container>
+          <ng-container *ngIf="!isMobile"><div class="text-head">Mulai usia berapa kita bisa memakai produk ini?</div></ng-container>
           <div class="arrow-section" [ngClass]="{'arrow-bottom': !faq2, 'arrow-up': faq2}"><img src="assets/images/arrow.png"></div>
         </div>
         <div class="faq-accordion-body" [ngClass]="{'body-notactive': !faq2, 'body-active': faq2}">

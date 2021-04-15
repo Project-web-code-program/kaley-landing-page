@@ -18,6 +18,8 @@ export class LandingPageComponent implements OnInit {
     if (this.isMobile) {
       $('.testimony-card-section').not('.slick-initialized').slick({
         centerMode: false,
+        infinite: true,
+        slidesToShow: 1,
         prevArrow: '<img src="assets/images/arrow-left-testimony.png">',
         nextArrow: '<img src="assets/images/arrow-right-testimony.png">'
       });
@@ -36,8 +38,10 @@ export class LandingPageComponent implements OnInit {
     if (this.isMobile) {
       $('.testimony-card-section').not('.slick-initialized').slick({
         centerMode: false,
-        prevArrow: '<img src="assets/images/arrow-left-testimony.png">',
-        nextArrow: '<img src="assets/images/arrow-right-testimony.png">'
+        infinite: true,
+        slidesToShow: 1,
+        prevArrow: '<img src="assets/images/arrow-left-testimony.png" width="24" height="24">',
+        nextArrow: '<img src="assets/images/arrow-right-testimony.png" width="24" height="24">'
       });
 
       // handle scroll horizontal move automatically at product card section
@@ -106,6 +110,41 @@ export class LandingPageComponent implements OnInit {
       }
     });
 
+  }
+
+  bindingTestimonyHtml(triger: string): string {
+    let finalHtml = '';
+    if (triger === 'ta1') {
+      finalHtml = (this.isMobile) ?
+        `“Top markotop pokoknya. Aku<br>udah mau habis dua botol pake<br>serum nanas ini.
+        Pokoknya apa<br>yang di klaim sama produknya,<br>beneran terbukti deh. Mantul<br>wangi nya enak, mudah di<br>aplikasiin
+        ke muka. Cepat nyerap<br>juga jadi nyaman untuk dibawa<br>tidur di malam hari. Loveeeeeeee<br>pokoknyaaa.”`
+        :
+        `“Top markotop pokoknya. Aku udah mau habis dua botol pake serum nanas ini.
+        Pokoknya apa yang di klaim sama produknya, beneran terbukti deh. Mantul wangi nya enak, mudah di aplikasiin
+        ke muka. Cepat nyerap juga jadi nyaman untuk dibawa tidur di malam hari. Loveeeeeeee pokoknyaaa.”`;
+    } else if (triger === 'ta2') {
+      finalHtml = (this.isMobile) ?
+        `“So far ini adalah sleeping mask<br>terbaik yang pernah aku coba.<br>Wanginya enakkkkkkk<br>bangetttttt!
+        Teksturnya thick<br>kayak sleeping mask pada<br>umumnya. Beberapa menit awal<br>pemakaian terasa greasy, tapi<br>setelahnya meresap banget.<br>
+        Nyaman banget dipakai tidur,<br>terutama buat yang kamarnya<br>tanpa AC. Pas bangun, kulit<br>terasa lebih plump, kenyal-kenyal<br>gitu.”`
+        :
+        `“So far ini adalah sleeping mask terbaik yang pernah aku coba. Wanginya enakkkkkkk bangetttttt!
+        Teksturnya thick kayak sleeping mask pada umumnya. Beberapa menit awal pemakaian terasa greasy, tapi setelahnya meresap banget. Nyaman
+        banget dipakai tidur, terutama buat yang kamarnya tanpa AC. Pas bangun, kulit terasa lebih plump, kenyal-kenyal gitu.”`;
+    } else if (triger === 'ta3') {
+      finalHtml = (this.isMobile) ?
+        `“Enak banget bener-bener<br>chalming jerawat dan bruntusan.<br>
+        awal-awal waktu masih<br>bruntusan tuh ada sensasi<br>cekit-cekitnya,
+        tapi pas<br>bruntusannya udah membaik<br>udah nggak cekit-cekit lagi,<br>bener-bener nenangin dan<br>adeeeem.
+        Produk ini cocok<br>banget buat pemalas kayak aku<br>yang masker tinggal ngaduk aja<br>aku males hahahaha.”`
+        :
+        `“Enak banget bener-bener chalming jerawat dan bruntusan.
+        awal-awal waktu masih bruntusan tuh ada sensasi cekit-cekitnya,
+        tapi pas bruntusannya udah membaik udah nggak cekit-cekit lagi, bener-bener nenangin dan adeeeem.
+        Produk ini cocok banget buat pemalas kayak aku yang masker tinggal ngaduk aja aku males hahahaha.”`;
+    }
+    return finalHtml;
   }
 
   onClickFaqHead(numberOfFaq: string): void {

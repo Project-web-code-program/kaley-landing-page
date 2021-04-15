@@ -111,18 +111,11 @@
     <div class="testimony-card">
       <div class="testimony-inner-card" 
         (click)="openTestimonyUrl('https://reviews.femaledaily.com/products/treatment/serum-essence-23/kaley/pineapple-c-brightening-serum?cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=1')">
-        <img src="assets/images/trusted-stamp.png">
+        <img src="assets/images/trusted-stamp.png"> <!-- [innerHTML]="bindingTestimonyHtml('ta1')" -->
         <div class="testimony-name">Ferafitri1</div>
-        <ng-container *ngIf="isMobile">
-          <div class="testimony-answare">“Top markotop pokoknya. Aku<br>udah mau habis dua botol pake<br>serum nanas ini. 
-            Pokoknya apa<br>yang di klaim sama produknya,<br>beneran terbukti deh. Mantul<br>wangi nya enak, mudah di<br>aplikasiin
-            ke muka. Cepat nyerap<br>juga jadi nyaman untuk dibawa<br>tidur di malam hari. Loveeeeeeee<br>pokoknyaaa.”</div>
-        </ng-container>
-        <ng-container *ngIf="!isMobile">
-          <div class="testimony-answare">“Top markotop pokoknya. Aku udah mau habis dua botol pake serum nanas ini. 
-            Pokoknya apa yang di klaim sama produknya, beneran terbukti deh. Mantul wangi nya enak, mudah di aplikasiin
-            ke muka. Cepat nyerap juga jadi nyaman untuk dibawa tidur di malam hari. Loveeeeeeee pokoknyaaa.”</div>
-        </ng-container>
+        <div class="testimony-answare">“Top markotop pokoknya. Aku udah mau habis dua botol pake serum nanas ini.
+          Pokoknya apa yang di klaim sama produknya, beneran terbukti deh. Mantul wangi nya enak, mudah di aplikasiin
+          ke muka. Cepat nyerap juga jadi nyaman untuk dibawa tidur di malam hari. Loveeeeeeee pokoknyaaa.”</div>
       </div>
     </div>
     <div class="testimony-card">
@@ -130,16 +123,9 @@
         (click)="openTestimonyUrl('https://reviews.femaledaily.com/products/mask/wash-off-peel-off/kaley/tofu-pudding-mask?cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=1')">
         <img src="assets/images/trusted-stamp.png">
         <div class="testimony-name">NadaAlech</div>
-        <ng-container *ngIf="isMobile">
-          <div class="testimony-answare">“So far ini adalah sleeping mask<br>terbaik yang pernah aku coba.<br>Wanginya enakkkkkkk<br>bangetttttt! 
-            Teksturnya thick<br>kayak sleeping mask pada<br>umumnya. Beberapa menit awal<br>pemakaian terasa greasy, tapi<br>setelahnya meresap banget.<br>
-            Nyaman banget dipakai tidur,<br>terutama buat yang kamarnya<br>tanpa AC. Pas bangun, kulit<br>terasa lebih plump, kenyal-kenyal<br>gitu.”</div>
-        </ng-container>
-        <ng-container *ngIf="!isMobile">
-          <div class="testimony-answare">“So far ini adalah sleeping mask terbaik yang pernah aku coba. Wanginya enakkkkkkk bangetttttt! 
-            Teksturnya thick kayak sleeping mask pada umumnya. Beberapa menit awal pemakaian terasa greasy, tapi setelahnya meresap banget. 
-            Nyaman banget dipakai tidur, terutama buat yang kamarnya tanpa AC. Pas bangun, kulit terasa lebih plump, kenyal-kenyal gitu.”</div>
-        </ng-container>
+        <div class="testimony-answare">“So far ini adalah sleeping mask terbaik yang pernah aku coba. Wanginya enakkkkkkk bangetttttt!
+          Teksturnya thick kayak sleeping mask pada umumnya. Beberapa menit awal pemakaian terasa greasy, tapi setelahnya meresap banget. Nyaman
+          banget dipakai tidur, terutama buat yang kamarnya tanpa AC. Pas bangun, kulit terasa lebih plump, kenyal-kenyal gitu.”</div>
       </div>
     </div>
     <div class="testimony-card">
@@ -147,18 +133,10 @@
         (click)="openTestimonyUrl('https://reviews.femaledaily.com/products/mask/sleeping-mask/kaley/watermelon-jelly-mask?cat=&cat_id=0&age_range=&skin_type=&skin_tone=&skin_undertone=&hair_texture=&hair_type=&order=newest&page=1')">
         <img src="assets/images/trusted-stamp.png">
         <div class="testimony-name">Evyndacari</div>
-        <ng-container *ngIf="isMobile">
-          <div class="testimony-answare">“Enak banget bener-bener<br>chalming jerawat dan bruntusan.<br> 
-            awal-awal waktu masih<br>bruntusan tuh ada sensasi<br>cekit-cekitnya, 
-            tapi pas<br>bruntusannya udah membaik<br>udah nggak cekit-cekit lagi,<br>bener-bener nenangin dan<br>adeeeem. 
-            Produk ini cocok<br>banget buat pemalas kayak aku<br>yang masker tinggal ngaduk aja<br>aku males hahahaha.”</div>
-        </ng-container>
-        <ng-container *ngIf="!isMobile">
-          <div class="testimony-answare">“Enak banget bener-bener chalming jerawat dan bruntusan. 
-            awal-awal waktu masih bruntusan tuh ada sensasi cekit-cekitnya, 
-            tapi pas bruntusannya udah membaik udah nggak cekit-cekit lagi, bener-bener nenangin dan adeeeem. 
-            Produk ini cocok banget buat pemalas kayak aku yang masker tinggal ngaduk aja aku males hahahaha.”</div>
-        </ng-container>
+        <div class="testimony-answare">“Enak banget bener-bener chalming jerawat dan bruntusan.
+          awal-awal waktu masih bruntusan tuh ada sensasi cekit-cekitnya,
+          tapi pas bruntusannya udah membaik udah nggak cekit-cekit lagi, bener-bener nenangin dan adeeeem.
+          Produk ini cocok banget buat pemalas kayak aku yang masker tinggal ngaduk aja aku males hahahaha.”</div>
       </div>
     </div>
   </div>

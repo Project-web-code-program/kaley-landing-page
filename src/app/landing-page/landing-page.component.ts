@@ -9,12 +9,14 @@ declare var $: any;
 export class LandingPageComponent implements OnInit {
   faq1 = false; faq2 = false; faq3 = false; faq4 = false; faq5 = false;
   isMobile = false;
+  isMobileSmall = false;
   screenWidth: number;
 
   @HostListener('window:resize', ['$event'])
   // tslint:disable-next-line:typedef
   onResize(event?: any) {
-    this.isMobile = (event.target.innerWidth < 768) ? true : false;
+    this.isMobile = (event.target.innerWidth > 320 && event.target.innerWidth < 768) ? true : false;
+    this.isMobileSmall = (event.target.innerWidth <= 320) ? true : false;
     if (this.isMobile) {
       $('.testimony-card-section').not('.slick-initialized').slick({
         centerMode: false,
@@ -32,7 +34,10 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isMobile = (window.innerWidth < 768) ? true : false;
+    this.isMobile = (window.innerWidth > 320 && window.innerWidth < 768) ? true : false;
+    console.log('this.isMobile', this.isMobile);
+    this.isMobileSmall = (window.innerWidth <= 320) ? true : false;
+    console.log('this.isMobileSmall', this.isMobileSmall);
     this.screenWidth = window.innerWidth;
 
     if (this.isMobile) {

@@ -90,7 +90,7 @@
 
 		display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: unset;
 
 		.img-particle-1 {
 			position: absolute;
@@ -102,6 +102,7 @@
 		}
 
 		.banner-left-content {
+      margin-left: 124px;
 			.ingin-kulit-text {
 				width: 588px;
 				font-family: Nunito-ExtraBold;
@@ -144,8 +145,10 @@
 			width: 100%;
 			text-align: center;
 			padding: 40px 20px;
+      justify-content: center;
 			.img-particle-1, .img-particle-2 { display: none; }
 			.banner-left-content {
+        margin-left: unset;
 				.ingin-kulit-text {
 					width: unset;
 					font-size: 18px;
@@ -229,13 +232,18 @@
 		.values-card {
 			width: calc(50% - 20px);
 			padding: 0px 10px;
-			.values-title { font-size: 16px; }
+			.values-title { 
+        font-size: 16px;
+        @include breakpoint(small-mobile) {
+          font-size: 15px;
+        }
+      }
 			.values-desc {
 				font-size: 14px;
 				line-height: 21px;
-        @include breakpoint(small-mobile) {
-          font-size: 12px;
-        }
+        // @include breakpoint(small-mobile) {
+        //   font-size: 12px;
+        // }
 			}
 			img {
 				width: 48px; height: 48px;

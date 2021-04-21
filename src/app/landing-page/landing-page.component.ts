@@ -35,12 +35,10 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.isMobile = (window.innerWidth > 320 && window.innerWidth < 768) ? true : false;
-    console.log('this.isMobile', this.isMobile);
     this.isMobileSmall = (window.innerWidth <= 320) ? true : false;
-    console.log('this.isMobileSmall', this.isMobileSmall);
     this.screenWidth = window.innerWidth;
 
-    if (this.isMobile) {
+    if (this.isMobile || this.isMobileSmall) {
       $('.testimony-card-section').not('.slick-initialized').slick({
         centerMode: false,
         infinite: true,

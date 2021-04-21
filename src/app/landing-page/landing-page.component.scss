@@ -312,9 +312,13 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				padding: 10px 7px;
+				padding: 10px 5px;
 				font-size: 14px;
 				line-height: 21px;
+        @include breakpoint(very-small-mobile) {
+          padding: 10px 2px;
+          font-size: 13.2px;
+        }
 			}
 		}
 	}

@@ -34,4 +34,9 @@
       @content;
     }
   }
+  @if $value == very-small-mobile {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
 }

@@ -103,7 +103,7 @@
       <img src="assets/images/discount-icon.png">
     </div>
     <div class="benefit-card-body">
-      <div>Diskon Setiap<br>Pembelian Produk</div>
+      <div>Diskon Setiap<br>Pembelian Dua Produk</div>
     </div>
   </div>
 </div>
@@ -223,7 +223,7 @@
 </div>
 
 <div class="footer-section">
-  <ng-container *ngIf="isMobile">
+  <ng-container *ngIf="isMobile || isMobileSmall">
     <div class="footer-right">
       <img src="assets/images/logo-kaley-big.png">
     </div>
@@ -236,7 +236,7 @@
     </div>
   </ng-container>
 
-  <ng-container *ngIf="!isMobile">
+  <ng-container *ngIf="!isMobile && !isMobileSmall">
     <div class="footer-left">
       <div class="footer-left-text">Biar yakin buat cobain Kaley skincare,<br>coba dulu manfaatnya!</div>
       <button class="btn-global whatsapp-section" (click)="openWhatsapp()">

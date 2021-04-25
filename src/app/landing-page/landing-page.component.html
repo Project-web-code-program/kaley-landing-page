@@ -103,7 +103,8 @@
       <img src="assets/images/discount-icon.png">
     </div>
     <div class="benefit-card-body">
-      <div>Diskon Setiap<br>Pembelian Dua Produk</div>
+      <ng-container *ngIf="isMobile || isMobileSmall"><div>Diskon Setiap<br>Beli 2 Produk<br>atau Lebih</div></ng-container>
+      <ng-container *ngIf="!isMobile && !isMobileSmall"><div>Diskon Setiap Beli<br>2 Produk atau Lebih</div></ng-container>
     </div>
   </div>
 </div>

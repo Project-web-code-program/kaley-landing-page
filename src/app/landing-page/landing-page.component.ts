@@ -182,7 +182,8 @@ export class LandingPageComponent implements OnInit {
   }
 
   openWhatsapp(): void {
-    window.open('https://api.whatsapp.com/send?phone=6285779800933&text=Hai%20Admin%20Kaley', '_blank');
+    // window.open('https://api.whatsapp.com/send?phone=6285779800933&text=Hai%20Admin%20Kaley', '_blank');
+    window.open('https://pesan.link/kaleyskincare', '_blank');
   }
 
 }
